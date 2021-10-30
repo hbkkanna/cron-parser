@@ -16,7 +16,7 @@ Cron expression parser is a simple command-line tool to parse cron expressions.
         
         *  "*"     - wildcard any allowed values within the time value limits
         *  "*/5"   - values with regular step interval
-        *  "5-5"   - range values
+        *  "5-7"   - range values
         *  "2,4,5" - specific values
         *  "5"     - single value
         
