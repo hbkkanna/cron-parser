@@ -36,5 +36,5 @@ Cron expression parser is a simple command-line tool to parse cron expressions.
 
 ## How to run unit test?
    - Go to the root folder of project and use following commands
-       1. python  -m unittest -v test.cron
+       1. python  -m unittest -v test_cron
        2. python -m unittest  -v test_cron.TestCron.test_is_valid_number
