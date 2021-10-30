@@ -19,6 +19,7 @@ class Cron:
       Allowed formats : * , */num , num , num,num and num-num.
       This programs run with time and space complexity of  O(number of tokens)
     """
+
     def __init__(self, str):
         self.str = str
         self.parsed_tokens = dict()
@@ -144,7 +145,6 @@ if __name__ == '__main__':
                 crons.append(cron)
             else:
                 howto()
-
     else:
         logger.error("No cron expression input string")
         howto()

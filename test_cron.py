@@ -7,7 +7,7 @@ import traceback
 class TestCron(unittest.TestCase):
 
     def test_validate_tokens(self):
-        #print "start  valid tokens"
+        # print "start  valid tokens"
         # positive cases
         assert (True, util.TYPE_WILD) == util.validate_tokens("*")
         assert (True, util.TYPE_STEPS) == util.validate_tokens("*/7")
@@ -21,10 +21,10 @@ class TestCron(unittest.TestCase):
         assert (False, None) == util.validate_tokens("3-")
         assert (False, None) == util.validate_tokens("*/")
         assert (False, None) == util.validate_tokens("3,")
-        #print "end valid tokens"
+        # print "end valid tokens"
 
     def test_is_valid_number(self):
-        #print "start is valid number"
+        # print "start is valid number"
         for index, value in util.TIME_VALUES.iteritems():
             assert True == util.is_valid_number(value[1], index)
             assert True == util.is_valid_number(value[1] + 1, index)
@@ -35,7 +35,7 @@ class TestCron(unittest.TestCase):
             assert False == util.is_valid_number(value[1] - 1, index)
             assert False == util.is_valid_number(value[2] + 1, index)
 
-        #print "end  valid number"
+        # print "end  valid number"
 
     def test_cron(self):
         formats = ["*/5", "1,5", "1-4", "5"]
@@ -75,7 +75,7 @@ class TestCron(unittest.TestCase):
                 print valid_str
                 cron_obj = cron.Cron(valid_str)
                 cron_obj.parse()
-                #cron_obj.to_string()
+                # cron_obj.to_string()
                 assert True == cron_obj.is_valid
                 print "-------------valid case end---------------"
             for invalid_str in invalid_cases:
@@ -83,7 +83,7 @@ class TestCron(unittest.TestCase):
                 print invalid_str
                 cron_obj = cron.Cron(invalid_str)
                 cron_obj.parse()
-                #cron_obj.to_string()
+                # cron_obj.to_string()
                 assert False == cron_obj.is_valid
                 print "------------invalid case end----------------"
 
