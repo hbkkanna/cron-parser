@@ -16,15 +16,17 @@ Cron expression parser is a simple command-line tool to parse cron expressions.
         
         *  "*"     - wildcard any allowed values within the time value limits
         *  "*/5"   - values with regular step interval
-        *. "5-5"   - range values
+        *  "5-5"   - range values
         *  "2,4,5" - specific values
         *  "5"     - single value
         
 
 ###  Sample Cron Expressions
+```
      "*/15 0 1,15 * 1-5 /usr/bin/find"
      "* * * * * /usr/bin/find"
      "* */3 5 6 7 /usr/bin/find"
+```
 ### Sample output of tool
      Input : "*/15 0 1,15 * 1-5 /usr/bin/find"
      Output :
