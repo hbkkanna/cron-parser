@@ -11,7 +11,7 @@ Cron expression parser is a simple command-line tool to parse cron expressions.
 ## Supported Syntax
 ###  Format
    - "\<minute\> \<hour\> \<day of month\> \<month\> \<day of week\> \<command\>"
-   - where minute , hours etc are tokens <command> is exception which is executable
+   - where minute , hours etc are tokens "command" is exception which is executable
    - each token can have following formats
         
         *  "*"     - wildcard any allowed values within the time value limits
