@@ -58,21 +58,21 @@ class Cron:
                 if tokens[item].strip() == "":
                     continue
                 if time_index > 4:
-                    self.command.append(tokens[time_index])
+                    self.command.append(tokens[item])
                     continue
-                is_valid, format_type = validate_tokens(tokens[time_index])
-                logger.debug("Index : {} Token : {}, Format {}".format(time_index, tokens[time_index], format_type))
+                is_valid, format_type = validate_tokens(tokens[item])
+                logger.debug("Index : {} Token : {}, Format {}".format(time_index, tokens[item], format_type))
                 if not is_valid:
-                    logger.error("Invalid {} token : {} ".format(get_time_name(time_index), tokens[time_index]))
+                    logger.error("Invalid {} token : {} ".format(get_time_name(time_index), tokens[item]))
                     self.is_valid = False
                     return
-                expanded_values = self.__expand_validate_token(time_index, format_type, tokens[time_index])
+                expanded_values = self.__expand_validate_token(time_index, format_type, tokens[item])
                 if not expanded_values:
                     logger.error("Invalid {} , out of range values , token : {} ".format(get_time_name(time_index),
-                                                                                         tokens[time_index]))
+                                                                                         tokens[item]))
                     self.is_valid = False
                     return
-                self.parsed_tokens.update({time_index: tokens[time_index]})
+                self.parsed_tokens.update({time_index: tokens[item]})
                 self.__set_named_values(time_index, expanded_values)
                 time_index = time_index + 1;
         except:
@@ -138,6 +138,7 @@ if __name__ == '__main__':
         for i in range(len(sys.argv)):
             if i == 0:
                 continue
+
             cron = Cron(sys.argv[i])
             cron.parse()
             cron.to_string()

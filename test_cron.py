@@ -59,9 +59,11 @@ class TestCron(unittest.TestCase):
             "* * * * *   /usr/bin/find",
             "*/45 1 5 6 7 /usr/bin/find",
             "0 */4 * * * /scripts/script.sh",
-            "*/45 */2 */2 */3 */2    ls",
+            "*/45 */2 */2     */3 */2    ls",
         ]
         """
+
+        valid_cases.append("*/45 */2 */2     */3 */2    ls")
 
         invalid_cases = [
             "",
