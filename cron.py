@@ -17,7 +17,7 @@ class Cron:
       Format : "<Minute> <Hour> <Day of month> <Month> <Day of weeks>"
       Each token validated with allowed formats and then printed in easy to read way.
       Allowed formats : * , */num , num , num,num and num-num.
-      This programs run with time complexity of O(number of tokens) and space complexity of 0(1)
+      This programs run with time and space complexity of O(number of tokens)
     """
 
     def __init__(self, str):
