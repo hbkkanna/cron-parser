@@ -14,7 +14,7 @@ Cron expression parser is a simple command-line tool to parse cron expressions.
    - where minute , hours etc are tokens "command" is exception which is executable
    - each token can have following formats
         
-        *  "*"     - wildcard any allowed values within the time value limits
+        *  "*"     - wildcard all allowed values within the time value limits
         *  "*/5"   - values with regular step interval
         *  "5-7"   - range values
         *  "2,4,5" - specific values
